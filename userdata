@@ -8,7 +8,7 @@ cd /var/www/html
 sudo rm index.html
 
 # Clone your GitHub repository
-sudo git clone https://github.com/bobbysstudies/EC2.git .
+sudo git clone https://github.com/bobbysstudies/LoadBalancing.git .
 
 # Restart Apache service to apply the changes
 sudo service httpd restart
