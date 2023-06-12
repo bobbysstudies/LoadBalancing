@@ -1,0 +1,14 @@
+#!/bin/bash
+sudo yum update -y
+sudo yum install -y httpd git
+
+cd /var/www/html
+
+# Remove the default Apache index.html file
+sudo rm index.html
+
+# Clone your GitHub repository
+sudo git clone https://github.com/bobbysstudies/EC2.git .
+
+# Restart Apache service to apply the changes
+sudo service httpd restart
