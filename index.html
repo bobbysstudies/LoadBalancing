@@ -5,17 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cloud Chronicles V3</title>
-    <script>
-        function getIP(json) {
-            var ipAddress = json.ip;
-            var ipElement = document.getElementById("ipAddress");
-            ipElement.textContent = ipAddress;
-        }
-    </script>
-    <script src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
 </head>
 <body>
     <h1>I did it! I created a webserver with EC2 to host an index.html file I created.</h1>
-    <p>The IP address of this server is: <span id="ipAddress">Loading...</span></p>
+    <p>The IP address of this server is: <?php echo shell_exec('hostname -f'); ?></p>
 </body>
 </html>
