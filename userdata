@@ -1,14 +1,6 @@
 #!/bin/bash
 sudo yum update -y
-sudo yum install -y httpd git
-
-cd /var/www/html
-
-# Remove the default Apache index.html file
-sudo rm index.html
-
-# Clone your GitHub repository
-sudo git clone https://github.com/bobbysstudies/LoadBalancing.git .
-
-# Restart Apache service to apply the changes
-sudo service httpd restart
+sudo yum install -y httpd
+systemctl start httpd
+systemctl enable httpd
+echo"<h1>This is the IP of 1 of 2 webservers $(hostname -f)</h1>"> /var/www/html/index.html
